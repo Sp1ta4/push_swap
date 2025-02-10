@@ -15,9 +15,9 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
-
 bonus: $(OBJS) $(OBJS_B)
 	$(AR) $(NAME) $(OBJS_B)
+
 
 clean:
 	$(RM) $(OBJS) $(OBJS_B)

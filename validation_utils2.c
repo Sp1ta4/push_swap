@@ -1,16 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   validation_utils2.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 16:08:08 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/10 17:13:42 by ggevorgi         ###   ########.fr       */
+/*   Created: 2025/02/10 14:47:01 by ggevorgi          #+#    #+#             */
+/*   Updated: 2025/02/10 22:01:36 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
+int	is_str_repeat_in_array(char **str_nums_array)
+{
+	int	i;
+	int	j;
+	size_t	istr_len;
+	size_t	jstr_len;
+
+	i = 0;
+	while(str_nums_array[i])
+	{
+		istr_len = ft_strlen(str_nums_array[i]);
+		j = i;
+		while (str_nums_array[++j])
+		{
+			jstr_len = ft_strlen(str_nums_array[j]);
+			if (jstr_len > istr_len)
+			{
+				if (!ft_strncmp(str_nums_array[i], str_nums_array[j], jstr_len))
+					return (1);
+			}
+			else
+				if (!ft_strncmp(str_nums_array[i], str_nums_array[j], istr_len))
+					return (1);
+		}	
+		i++;		
+	}
+	return (0);
+}
 
 static int	ft_isspace(int symbol)
 {
@@ -27,9 +55,9 @@ static char	*ft_trim_start(char *str)
 	return (&str[i]);
 }
 
-int	ft_atoi(const char *nptr)
+long ft_atol(const char *nptr)
 {
-	int		result;
+	long		result;
 	char	*nptr_cpy;
 	int		is_negative;
 
@@ -42,6 +70,8 @@ int	ft_atoi(const char *nptr)
 			is_negative = -1;
 		++nptr_cpy;
 	}
+	if (ft_strlen(nptr) >= 19)
+		throw_error();
 	while (ft_isdigit(*nptr_cpy))
 	{
 		result = result * 10 + (*nptr_cpy - 48);

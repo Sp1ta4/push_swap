@@ -6,125 +6,124 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 20:05:50 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/08 21:51:25 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/10 22:14:24 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "push_swap.h"
 
-char **create_splited_numbers(char **str_arr)
+void print_numarray (int *arr, int length)
 {
-	char *joined_str;
-	char **result;
+	int i;
+
+	i = -1;
+	write(1, "[", 1);
+	while (++i < length)
+	{
+		i + 1 == length ? printf("%d]\n", arr[i]) : printf("%d, ", arr[i]);
+	}
+}
+
+void	check_NULL(void *arg)
+{
+	if (!arg)
+		exit(1);
+}
+
+// t_stack_node *create_stack(int *nums_array)
+// {
+	
+// }
+
+void swap(int *a, int *b)
+{
+	int temp;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
+void sort_arr(int *arr, int length)
+{
 	int	i;
+	int	j;
+	int	is_swapped;
 
 	i = 0;
-	joined_str = "";
-	while (str_arr[i])
+	while(i < length -1)
 	{
-		joined_str = ft_strjoin(joined_str, str_arr[i]);
-		joined_str = ft_strjoin(joined_str, " ");
-		if(!joined_str)
-			break ;
+		is_swapped = 0;
+		j = 0;
+		while (j < length - i - 1)
+		{
+			if (arr[j] > arr[j + 1])
+			{
+				swap(&arr[j], &arr[j + 1]);
+				is_swapped = 1;
+			}
+			j++;
+		}
+		if (!is_swapped)
+			break;
 		i++;
 	}
-	if (!joined_str)
-		return (NULL);
-	result = ft_split(joined_str, ' ');
-	if (!result)
-	{
-		free(joined_str);
-		return (NULL);
-	}
-	free(joined_str);
-	return (result);
 }
-
-int ft_isnotdigit(char *str)
+int ft_index_of(int *arr, int num, int len)
 {
-	while(*str)
-	{
-		if (*str < '0' && *str > '9')
-			return (1);
-		str++;
-	}
-	return (0);
-}
-
-int is_valid_params(char **argv)
-{
-	int	i;
-
-	i = -1;
-	while(argv[++i])
-	{
-		if(ft_isnotdigit(argv[1]))
-			return (0);
-	}
-	return (1);
-}
-
-int array_length(char **str_arr)
-{
-	int len;
-
-	len = -1;
-	while(str_arr[++len])
-		continue;
-	return (len);
-}
-
-int *check_and_create_atoi_array(char **nums_str)
-{
-	int *res;
 	int i;
-	long tmp;
 
-	if(!nums_str && !*nums_str)
-		return (NULL);
 	i = -1;
-	res = (int *)malloc((sizeof(int) * array_length(nums_str)) + 1);
-	if (!res)
-		return (NULL);
-	while(nums_str[++i])
+	while (++i < len)
 	{
-		tmp = ft_atoi(*nums_str);
-		if (tmp < INT_MIN || tmp > INT_MAX)
-		{
-			free(res);
-			throw_error();
-			return (NULL);
-		}
-		res[i] = tmp;
+		if (arr[i] == num)
+			return (i);
 	}
-	res[i] = 0;
-	return (res);
+	return (-1);
 }
+
+int *take_sorted_indexes(int *arr, int length)
+{
+	int	*indexes;
+	int	*sorted_arr;
+	int	i;
+	
+	sorted_arr = (int *)malloc(sizeof(int) * length);
+	indexes = (int *)malloc(sizeof(int) * length);
+	i = -1;
+	while (++i < length)
+		sorted_arr[i] = arr[i];
+	sort_arr(sorted_arr, length);
+	i = -1;
+	while (++i < length)
+	{
+		indexes[i] = ft_index_of(arr, sorted_arr[i], length);
+	}
+	print_numarray(sorted_arr, length);
+	free(sorted_arr);
+	return (indexes);
+}
+
 int	main(int argc, char **argv)
 {
 	char **char_nums_array;
 	int *nums_array;
-	
+	int nums_len;
+	// t_stack_node	*a_stack_begin;
+	int				*indexes_array;
+
 	if (argc > 1 && argv)
 	{
-		if (!is_valid_params(argv + 1))
-		{
+		if (!is_valid_params(argv + 1, argc - 1))
 			throw_error();
-			exit(1);
-		}
 		char_nums_array = create_splited_numbers(argv + 1);
-		if (!char_nums_array)
-			exit(1);
+		check_NULL(char_nums_array);
+		nums_len = array_length(char_nums_array);
 		nums_array = check_and_create_atoi_array(char_nums_array);
-		if (!nums_array)
-			exit(1);
-		while(nums_array)
-		{
-			printf("%d\n", *nums_array);
-			nums_array++;
-		}
-		
+		check_NULL(nums_array);
+		indexes_array = take_sorted_indexes(nums_array, nums_len);
+		// a_stack_begin = create_stack(nums_array);
+		print_numarray(nums_array, nums_len);
+		print_numarray(indexes_array, nums_len);
 	}
 	return (0);
 }
