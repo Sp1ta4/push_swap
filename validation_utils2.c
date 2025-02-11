@@ -6,11 +6,12 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 14:47:01 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/11 12:33:59 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/11 15:52:34 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 int	is_str_repeat_in_array(char **str_nums_array)
 {
 	int	i;
@@ -55,14 +56,6 @@ static char	*ft_trim_start(char *str)
 	return (&str[i]);
 }
 
-void	check_NULL(void *arg)
-{
-	if (!arg)
-	{
-		free_ptr((void **)&arg);
-		exit(1);
-	}
-}
 int	is_sorted(int *arr)
 {
 	int	i;

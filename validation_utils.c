@@ -32,9 +32,11 @@ int ft_isnotdigit(char *str)
 {
 	if (*str == '-')
 		str++;
+	if (!str[0])
+		return (1);
 	while(*str)
 	{
-		if ((*str < '0' || *str > '9'))
+		if ((*str < '0' || *str > '9') && *str != ' ')
 			return (1);
 		str++;
 	}
@@ -90,5 +92,6 @@ int *check_and_create_atoi_array(char **nums_str)
 		}
 		res[i] = tmp;
 	}
+
 	return (res);
 }

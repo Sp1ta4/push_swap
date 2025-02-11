@@ -6,7 +6,7 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 20:48:30 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/11 13:12:15 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/11 17:37:26 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 typedef struct s_stack_node
 {
-	void				*data;
+	int					data;
 	size_t				index;
 	struct s_stack_node	*next;
 }	t_stack_node;
@@ -60,13 +60,10 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-t_stack_node	*ft_lstnew(void *data, size_t index);
+t_stack_node	*ft_lstnew(int data, size_t index);
 void	ft_lstadd_front(t_stack_node **lst, t_stack_node *new);
 int		ft_lstsize(t_stack_node *lst);
 void	ft_lstadd_back(t_stack_node **lst, t_stack_node *new);
-void	ft_lstdelone(t_stack_node *lst, void (*del)(void*));
-void	ft_lstclear(t_stack_node **lst, void (*del)(void*));
-void	ft_lstiter(t_stack_node *lst, void (*f)(void *));
 t_stack_node	*ft_lstlast(t_stack_node *lst);
 
 #endif
