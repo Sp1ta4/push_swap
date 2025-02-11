@@ -54,13 +54,15 @@ int is_valid_params(char **argv, int argc)
 	return (1);
 }
 
-int array_length(char **str_arr)
+size_t array_length(char **str_arr)
 {
-	int len;
+	size_t len;
 
-	len = -1;
-	while(str_arr[++len])
-		continue;
+	len = 0;
+	while(str_arr[len])
+	{
+		++len;
+	}
 	return (len);
 }
 

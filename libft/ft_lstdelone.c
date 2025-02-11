@@ -6,16 +6,16 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 20:30:21 by ggevorgi          #+#    #+#             */
-/*   Updated: 2024/11/02 21:51:46 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/11 12:54:58 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstdelone(t_stack_node *lst, void (*del)(void*))
 {
 	if (!lst || !del)
 		return ;
-	del(lst->content);
+	del(lst->data);
 	free(lst);
 }

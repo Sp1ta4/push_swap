@@ -6,7 +6,7 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 14:47:01 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/10 22:01:36 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/11 12:33:59 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,28 @@ static char	*ft_trim_start(char *str)
 	while (str[i] != '\0' && ft_isspace(str[i]))
 		i++;
 	return (&str[i]);
+}
+
+void	check_NULL(void *arg)
+{
+	if (!arg)
+	{
+		free_ptr((void **)&arg);
+		exit(1);
+	}
+}
+int	is_sorted(int *arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i + 1])
+	{
+		if (arr[i] > arr[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 long ft_atol(const char *nptr)

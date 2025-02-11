@@ -6,15 +6,15 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 20:17:41 by ggevorgi          #+#    #+#             */
-/*   Updated: 2024/11/02 20:22:31 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/11 12:54:19 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+t_stack_node	*ft_lstlast(t_stack_node *lst)
 {
-	t_list	*lstcpy;
+	t_stack_node	*lstcpy;
 
 	if (!lst)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 17:11:02 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/10 15:33:34 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/11 12:34:10 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,12 @@ void throw_error(void)
 {
 	write(2, "Error\n", 6);
 	exit(1);
+}
+
+void free_ptr(void **p)
+{
+	if (p && *p) {
+		free(*p);
+		*p = NULL;
+	}
 }
