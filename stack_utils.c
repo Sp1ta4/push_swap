@@ -6,7 +6,7 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 15:57:12 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/13 15:49:03 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/13 17:54:34 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,20 +56,21 @@ void push_second_to_first(t_stack_node **f_stack, t_stack_node **s_stack, char *
 
     if (!f_stack || !s_stack || !*s_stack)
         return;
-    ft_lstadd_front(f_stack, *s_stack);
-	tmp = *s_stack;
+
+    tmp = *s_stack;
     *s_stack = (*s_stack)->next;
-	free_ptr((void **)&tmp);
-	if (msg)
-		ft_putstr_fd(msg, 1);
+    tmp->next = *f_stack;  // Вставляем в начало f_stack
+    *f_stack = tmp;        // Обновляем f_stack
+
+    if (msg)
+        ft_putstr_fd(msg, 1);
 }
+
 
 void rotate_begin_to_end(t_stack_node **begin, char *msg)
 {
 	t_stack_node *tmp;
-
-	printf("lllllllllllllllllllllll\n");
-
+	
 	if (!begin || !*begin || !(*begin)->next)
 		return ;
 	tmp = *begin;
