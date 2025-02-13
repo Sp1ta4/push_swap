@@ -1,32 +1,35 @@
 #include "push_swap.h"
 
+#include <stdlib.h>
+
 char **create_splited_numbers(char **str_arr)
 {
-	char *joined_str;
-	char **result;
-	int	i;
+    char *joined_str;
+    char **result;
+    char *tmp;
+    int i;
 
-	i = 0;
-	joined_str = "";
-	while (str_arr[i])
-	{
-		joined_str = ft_strjoin(joined_str, str_arr[i]);
-		joined_str = ft_strjoin(joined_str, " ");
-		if(!joined_str)
-			break ;
-		i++;
-	}
-	if (!joined_str)
-		return (NULL);
-	result = ft_split(joined_str, ' ');
-	if (!result)
-	{
-		free(joined_str);
-		return (NULL);
-	}
-	free(joined_str);
-	return (result);
+    i = 0;
+    joined_str = ft_strdup("");
+    if (!joined_str)
+        return (NULL);
+    while (str_arr[i])
+    {
+        tmp = ft_strjoin(joined_str, str_arr[i]);
+        free(joined_str);
+        if (!tmp)
+            return (NULL);
+        joined_str = ft_strjoin(tmp, " ");
+        free(tmp);
+        if (!joined_str)
+            return (NULL);
+        i++;
+    }
+    result = ft_split(joined_str, ' ');
+    free(joined_str);
+    return (result);
 }
+
 
 int ft_isnotdigit(char *str)
 {

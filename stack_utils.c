@@ -6,7 +6,7 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 15:57:12 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/11 17:40:10 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/13 15:49:03 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ t_stack_node *create_stack(int *nums_array, size_t *indexes_array, size_t length
 			return (NULL);
 		ft_lstadd_back(&stack, tmp_lst);	
 	}
+	free_ptr((void **)&nums_array);
+	free_ptr((void **)&indexes_array);
 	return (stack);
 }
 
@@ -55,7 +57,7 @@ void push_second_to_first(t_stack_node **f_stack, t_stack_node **s_stack, char *
     if (!f_stack || !s_stack || !*s_stack)
         return;
     ft_lstadd_front(f_stack, *s_stack);
-    tmp = *s_stack;
+	tmp = *s_stack;
     *s_stack = (*s_stack)->next;
 	free_ptr((void **)&tmp);
 	if (msg)
@@ -65,6 +67,8 @@ void push_second_to_first(t_stack_node **f_stack, t_stack_node **s_stack, char *
 void rotate_begin_to_end(t_stack_node **begin, char *msg)
 {
 	t_stack_node *tmp;
+
+	printf("lllllllllllllllllllllll\n");
 
 	if (!begin || !*begin || !(*begin)->next)
 		return ;

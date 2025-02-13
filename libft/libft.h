@@ -6,7 +6,7 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 20:48:30 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/11 17:37:26 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/13 13:19:02 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 t_stack_node	*ft_lstnew(int data, size_t index);
 void	ft_lstadd_front(t_stack_node **lst, t_stack_node *new);
-int		ft_lstsize(t_stack_node *lst);
+size_t		ft_lstsize(t_stack_node *lst);
 void	ft_lstadd_back(t_stack_node **lst, t_stack_node *new);
 t_stack_node	*ft_lstlast(t_stack_node *lst);
 
