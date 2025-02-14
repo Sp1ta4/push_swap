@@ -6,7 +6,7 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 15:52:38 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/13 13:03:23 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/14 14:22:24 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ void	check_NULL(void *arg)
 		exit(1);
 	}
 }
-void check_nums_array(int *num_arr, char **char_nums_arr)
+void check_nums_array(int *num_arr, char **char_nums_arr, size_t len)
 {
 	if (!num_arr)
 		exit(1);
-	if (is_sorted(num_arr))
+	if (is_sorted(num_arr, len))
 	{
-		free_ptr((void**)&char_nums_arr);
+		free_split(char_nums_arr);
 		free_ptr((void**)&num_arr);
 		exit(1);
 	}

@@ -6,7 +6,7 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 20:05:50 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/13 18:34:50 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/14 18:57:08 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void print_stack(t_stack_node *stack)
 	}
 	while (stack)
 	{
-		printf("%ld ", stack->index);
+		printf("%d ", stack->data);
 		stack = stack->next;
 	}
 	printf("\n");
@@ -73,15 +73,11 @@ int	main(int argc, char **argv)
 		a_stack_begin = NULL;
 		indexes_array = NULL;
 		init_stack(&a_stack_begin, indexes_array, argv + 1);
-		// print_stack(a_stack_begin);
-		print_stacks(a_stack_begin, b_stack_begin);
+		// print_stack(a_stack_begin);j
+		// print_stacks(a_stack_begin, b_stack_begin);
 		sort_stack(&a_stack_begin, &b_stack_begin);
-		// printf("%p\n", b_stack_begin);
 		// printf("size---------------->%d\n", ft_lstsize(a_stack_begin));
 		// printf("-------------------->%d\n", b_stack_begin->data);
-		// b_stack_begin  = (t_stack_node *)malloc(sizeof(t_stack_node));
-		// b_stack_begin->next = NULL;
-		// print_stack(a_stack_begin);	
 		print_stacks(a_stack_begin, b_stack_begin);
 		free_list(a_stack_begin);
 		free_list(b_stack_begin);

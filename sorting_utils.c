@@ -6,7 +6,7 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 11:12:01 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/11 13:21:58 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/14 11:36:20 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ size_t *take_sorted_indexes(int *arr, size_t length)
 	i = 0;
 	while (i < length)
 	{
-		indexes[i] = ft_index_of(arr, sorted_arr[i], length);
+		indexes[i] = ft_index_of(sorted_arr, arr[i], length);
 		i++;
 	}
 	free(sorted_arr);
