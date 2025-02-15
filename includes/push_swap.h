@@ -6,14 +6,14 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 17:11:04 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/15 15:45:51 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/15 17:14:47 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft.h"
+# include "../libft/libft.h"
 # include <unistd.h>
 # include <limits.h>
 

@@ -1,33 +1,44 @@
 NAME = push_swap
-SRCS = $(shell find . -maxdepth 1 -name "*.c")
+BNAME = checker
+
+SRC_DIR = src
+BONUS_DIR = bonus
+LIBFT_DIR = libft
+INCLUDE = -I includes
+
+SRCS = $(shell find $(SRC_DIR) -maxdepth 1 -name "*.c")
+SRCS_B = $(shell find $(BONUS_DIR) -maxdepth 1 -name "*.c")
+
 OBJS = $(SRCS:.c=.o)
+OBJS_B = $(SRCS_B:.c=.o)
+
 CC = cc
 RM = rm -f
-CFLAGS = -Wall -Werror -Wextra -Ilibft 
-AR = ar rcs
-
-LIBFT_DIR = libft
+CFLAGS = -Wall -Werror -Wextra
 LIBFT = $(LIBFT_DIR)/libft.a
 
 %.o: %.c
-	$(CC) $(CFLAGS) -fsanitize=address -g -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
-all: $(LIBFT) $(NAME)
+all: $(NAME)
 
 $(LIBFT):
-	make -C $(LIBFT_DIR)
+	$(MAKE) -C $(LIBFT_DIR)
 
 $(NAME): $(OBJS) $(LIBFT)
-	$(CC) $(OBJS) -Llibft -lft -fsanitize=address -g -o $(NAME)
+	$(CC) $(CFLAGS) $(INCLUDE) $(OBJS) -Llibft -lft -o $(NAME)
+
+bonus: $(LIBFT) $(OBJS_B)
+	$(CC) $(CFLAGS) $(INCLUDE) $(OBJS_B) -Llibft -lft -o $(BNAME)
 
 clean:
-	$(RM) $(OBJS)
-	make -C $(LIBFT_DIR) clean
+	$(RM) $(OBJS) $(OBJS_B)
+	$(MAKE) -C $(LIBFT_DIR) clean
 
 fclean: clean
-	$(RM) $(NAME)
-	make -C $(LIBFT_DIR) fclean
+	$(RM) $(NAME) $(BNAME)
+	$(MAKE) -C $(LIBFT_DIR) fclean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
