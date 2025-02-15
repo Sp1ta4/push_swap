@@ -6,28 +6,29 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 11:12:01 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/14 11:36:20 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/15 14:30:51 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void swap(int *a, int *b)
+void	swap(int *a, int *b)
 {
-	int temp;
+	int	temp;
 
 	temp = *a;
 	*a = *b;
 	*b = temp;
 }
-void sort_arr(int *arr, int length)
+
+void	sort_arr(int *arr, int length)
 {
 	int	i;
 	int	j;
 	int	is_swapped;
 
 	i = 0;
-	while(i < length - 1)
+	while (i < length - 1)
 	{
 		is_swapped = 0;
 		j = 0;
@@ -41,14 +42,14 @@ void sort_arr(int *arr, int length)
 			j++;
 		}
 		if (!is_swapped)
-			break;
+			break ;
 		i++;
 	}
 }
 
-size_t ft_index_of(int *arr, int num, size_t len)
+size_t	ft_index_of(int *arr, int num, size_t len)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < len)
@@ -60,12 +61,12 @@ size_t ft_index_of(int *arr, int num, size_t len)
 	return (-1);
 }
 
-size_t *take_sorted_indexes(int *arr, size_t length)
+size_t	*take_sorted_indexes(int *arr, size_t length)
 {
 	size_t	*indexes;
-	int	*sorted_arr;
+	int		*sorted_arr;
 	size_t	i;
-	
+
 	sorted_arr = (int *)malloc(sizeof(int) * length);
 	if (!sorted_arr)
 		return (NULL);
@@ -88,4 +89,3 @@ size_t *take_sorted_indexes(int *arr, size_t length)
 	free(sorted_arr);
 	return (indexes);
 }
-

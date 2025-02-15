@@ -6,7 +6,7 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 14:47:01 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/14 14:13:25 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/15 15:43:07 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	is_str_repeat_in_array(char **str_nums_array)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	size_t	istr_len;
 	size_t	jstr_len;
 
 	i = 0;
-	while(str_nums_array[i])
+	while (str_nums_array[i])
 	{
 		istr_len = ft_strlen(str_nums_array[i]);
 		j = i;
@@ -35,8 +35,8 @@ int	is_str_repeat_in_array(char **str_nums_array)
 			else
 				if (!ft_strncmp(str_nums_array[i], str_nums_array[j], istr_len))
 					return (1);
-		}	
-		i++;		
+		}
+		i++;
 	}
 	return (0);
 }
@@ -56,23 +56,23 @@ static char	*ft_trim_start(char *str)
 	return (&str[i]);
 }
 
-int is_sorted(int *arr, size_t size)
+int	is_sorted(int *arr, size_t size)
 {
-    size_t i;
+	size_t	i;
 
-    i = 0;
-    while (i < size - 1)
-    {
-        if (arr[i] > arr[i + 1])
-            return (0);
-        i++;
-    }
-    return (1);
+	i = 0;
+	while (i < size - 1)
+	{
+		if (arr[i] > arr[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
-long ft_atol(const char *nptr)
+long	ft_atol(const char *nptr)
 {
-	long		result;
+	long	result;
 	char	*nptr_cpy;
 	int		is_negative;
 
@@ -85,7 +85,7 @@ long ft_atol(const char *nptr)
 			is_negative = -1;
 		++nptr_cpy;
 	}
-	if (ft_strlen(nptr) >= 19)
+	if (ft_atol_strlen(nptr) >= 19)
 		throw_error();
 	while (ft_isdigit(*nptr_cpy))
 	{

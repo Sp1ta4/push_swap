@@ -6,17 +6,17 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 17:14:56 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/11 17:32:57 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/15 15:20:54 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_stack_node	*ft_lstnew(int data, size_t index)
-{	
-	t_stack_node	*nnode;
+t_stack	*ft_lstnew(int data, size_t index)
+{
+	t_stack	*nnode;
 
-	nnode = (t_stack_node *)malloc(sizeof(t_stack_node));
+	nnode = (t_stack *)malloc(sizeof(t_stack));
 	if (!nnode)
 		return (NULL);
 	nnode->data = data;

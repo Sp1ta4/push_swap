@@ -6,14 +6,14 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 20:05:18 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/13 15:05:45 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/15 15:20:22 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_stack_node **lst, t_stack_node *new)
+void	ft_lstadd_front(t_stack **lst, t_stack *new)
 {
-	new->next = *lst;	
+	new->next = *lst;
 	*lst = new;
 }

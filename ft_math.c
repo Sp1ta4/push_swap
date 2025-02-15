@@ -6,7 +6,7 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:34:08 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/14 09:10:15 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/15 13:36:17 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,50 @@
 
 size_t	ft_log2(size_t n)
 {
-	size_t log = 0;
+	size_t	log;
 
 	if (n == 0)
 		return (0);
-	while (n >>= 1)
+	log = 0;
+	while (n)
+	{
+		n >>= 1;
 		log++;
+	}
 	return (log);
 }
 
 size_t	ft_sqrt(size_t n)
 {
-	size_t left;
-	size_t right = n / 2 + 1;
-	size_t mid;
+	size_t	left;
+	size_t	right;
+	size_t	mid;
+	size_t	res;
 
-	left = 1;
 	if (n == 0 || n == 1)
 		return (n);
+	left = 1;
+	right = n / 2 + 1;
+	res = 0;
 	while (left <= right)
 	{
 		mid = left + (right - left) / 2;
-		if (mid > n / mid)
-			right = mid - 1;
-		else
+		if (mid * mid == n)
+			return (mid);
+		else if (mid * mid < n)
 		{
-			if ((mid + 1) > n / (mid + 1))
-				return (mid);
 			left = mid + 1;
+			res = mid;
 		}
+		else
+			right = mid - 1;
 	}
-	return (0);
+	return (res);
 }
 
-size_t get_available_number_range(size_t lstsize)
+size_t	get_available_number_range(size_t lstsize)
 {
-	return (ft_sqrt(lstsize) + ft_log2(lstsize) - 1);
+	if (lstsize == 0)
+		return (0);
+	return ((ft_sqrt(lstsize) * 3) / 2 + ft_log2(lstsize) - 1);
 }

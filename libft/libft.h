@@ -6,7 +6,7 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 20:48:30 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/13 13:19:02 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/15 15:20:01 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_stack_node
 	int					data;
 	size_t				index;
 	struct s_stack_node	*next;
-}	t_stack_node;
+}	t_stack;
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -60,10 +60,10 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-t_stack_node	*ft_lstnew(int data, size_t index);
-void	ft_lstadd_front(t_stack_node **lst, t_stack_node *new);
-size_t		ft_lstsize(t_stack_node *lst);
-void	ft_lstadd_back(t_stack_node **lst, t_stack_node *new);
-t_stack_node	*ft_lstlast(t_stack_node *lst);
+t_stack	*ft_lstnew(int data, size_t index);
+void	ft_lstadd_front(t_stack **lst, t_stack *new);
+size_t	ft_lstsize(t_stack *lst);
+void	ft_lstadd_back(t_stack **lst, t_stack *new);
+t_stack	*ft_lstlast(t_stack *lst);
 
 #endif
