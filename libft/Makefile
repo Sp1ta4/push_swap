@@ -3,7 +3,7 @@ SRCS = $(shell find . -maxdepth 1 -name "*.c")
 OBJS = $(SRCS:.c=.o)
 CC = cc
 RM = rm -f
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -I ../includes
 AR = ar rcs
 
 %.o: %.c
@@ -15,7 +15,7 @@ $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
 clean:
-	$(RM) $(OBJS) $(OBJS_B)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)

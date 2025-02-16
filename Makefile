@@ -29,7 +29,7 @@ $(NAME): $(OBJS) $(LIBFT)
 	$(CC) $(CFLAGS) $(INCLUDE) $(OBJS) -Llibft -lft -o $(NAME)
 
 bonus: $(LIBFT) $(OBJS_B)
-	$(CC) $(CFLAGS) $(INCLUDE) $(OBJS_B) -Llibft -lft -o $(BNAME)
+	$(CC) $(CFLAGS)  $(INCLUDE) $(OBJS_B) -Llibft -lft -o $(BNAME)
 
 clean:
 	$(RM) $(OBJS) $(OBJS_B)

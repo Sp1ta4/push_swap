@@ -6,11 +6,11 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 13:55:13 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/15 18:07:49 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/16 17:43:37 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 char	**create_splited_numbers(char **str_arr)
 {

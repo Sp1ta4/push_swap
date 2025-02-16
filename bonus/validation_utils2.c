@@ -6,11 +6,11 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 14:47:01 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/15 17:32:16 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/16 17:42:07 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 int	is_str_repeat_in_array(char **str_nums_array)
 {
