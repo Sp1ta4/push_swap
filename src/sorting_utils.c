@@ -6,7 +6,7 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 11:12:01 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/15 14:30:51 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/17 09:22:00 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	sort_arr(int *arr, int length)
 	}
 }
 
-size_t	ft_index_of(int *arr, int num, size_t len)
+static size_t	ft_index_of(int *arr, int num, size_t len)
 {
 	size_t	i;
 

@@ -6,13 +6,13 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:34:08 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/15 13:36:17 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/17 09:15:50 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-size_t	ft_log2(size_t n)
+static size_t	ft_log2(size_t n)
 {
 	size_t	log;
 
@@ -27,7 +27,7 @@ size_t	ft_log2(size_t n)
 	return (log);
 }
 
-size_t	ft_sqrt(size_t n)
+static size_t	ft_sqrt(size_t n)
 {
 	size_t	left;
 	size_t	right;

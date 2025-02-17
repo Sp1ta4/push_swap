@@ -6,7 +6,7 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 13:55:13 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/15 18:07:49 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/17 09:46:44 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,12 +104,11 @@ int	*check_and_create_atoi_array(char **nums_str)
 		throw_error();
 	i = -1;
 	res = (int *)malloc((sizeof(int) * array_length(nums_str)));
-	if (!res)
-		return (NULL);
+	check_null(res);
 	while (nums_str[++i])
 	{
 		tmp = ft_atol(nums_str[i]);
-		if (tmp < INT_MIN || tmp > INT_MAX)
+		if (tmp < INT_MIN || tmp > INT_MAX || is_repeat_num(res, i + 1, tmp))
 		{
 			free(res);
 			throw_error();

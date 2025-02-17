@@ -6,7 +6,7 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 15:52:38 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/15 17:31:45 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/17 09:50:57 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,18 @@ void	check_idx_arr(size_t *i_array, int *n_array, char **char_nums)
 		free_split(char_nums);
 		exit(1);
 	}
+}
+
+int	is_repeat_num(int *arr, int length, long num)
+{
+	int	i;
+
+	i = 0;
+	while (i < length)
+	{
+		if (arr[i] == num)
+			return (1);
+		i++;
+	}
+	return (0);
 }

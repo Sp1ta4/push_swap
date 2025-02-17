@@ -6,13 +6,13 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 17:25:52 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/16 18:51:08 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/17 09:02:14 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	char	*command;
 	t_stack	*a_stack_begin;	
@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 		init_stack(&a_stack_begin, indexes_array, argv + 1);
 		command = get_next_line(0);
 		while (command)
-			do_sorting_operation(&a_stack_begin, &b_stack_begin, &command);
+			do_operation(&a_stack_begin, &b_stack_begin, &command);
 		check_result(a_stack_begin, b_stack_begin, &command);
 		free_list(a_stack_begin);
 		free_list(b_stack_begin);

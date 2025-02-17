@@ -6,13 +6,13 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 14:17:45 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/15 15:23:03 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/17 09:18:49 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	fill_stack(t_stack **a_stack, t_stack **b_stack)
+static void	fill_stack(t_stack **a_stack, t_stack **b_stack)
 {
 	size_t	max_index_pos;
 	size_t	b_size;
@@ -29,7 +29,7 @@ void	fill_stack(t_stack **a_stack, t_stack **b_stack)
 	}
 }
 
-void	sort_three_elems_stack(t_stack **stack)
+static void	sort_three_elems_stack(t_stack **stack)
 {
 	size_t	a;
 	size_t	b;
@@ -56,7 +56,7 @@ void	sort_three_elems_stack(t_stack **stack)
 	}
 }
 
-void	find_rotate_way(t_stack **stack, t_stack *node)
+static void	find_rotate_way(t_stack **stack, t_stack *node)
 {
 	t_stack	*tmp;
 	size_t	stack_size;
@@ -76,7 +76,7 @@ void	find_rotate_way(t_stack **stack, t_stack *node)
 		rotate_begin_to_end_n(stack, "ra\n", pos);
 }
 
-void	sort_under_twelve(t_stack **a_stack, t_stack **b_stack)
+static void	sort_under_twelve(t_stack **a_stack, t_stack **b_stack)
 {
 	t_stack	*tmp;
 	size_t	size;

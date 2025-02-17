@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/17 09:01:11 by ggevorgi          #+#    #+#             */
+/*   Updated: 2025/02/17 09:01:41 by ggevorgi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CHECKER_H
 # define CHECKER_H
 
@@ -18,7 +30,7 @@ char			*get_next_line(int fd);
 int				ft_isspace(char c);
 void			throw_error(void);
 void			check_op_and_null_terminate(char **operation);
-void			do_sorting_operation(t_stack **a_stack, t_stack **b_stack, char **operation);
+void			do_operation(t_stack **a_stack, t_stack **b_stack, char **op);
 size_t			is_tmp_stack_empty(t_stack *stack);
 int				is_stack_sorted(t_stack *stack);
 void			check_result(t_stack *a_stack, t_stack *b_stack, char **op);

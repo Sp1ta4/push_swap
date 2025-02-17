@@ -6,7 +6,7 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 17:11:04 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/15 18:07:34 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/17 09:46:04 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,10 @@ size_t			array_length(char **str_arr);
 int				is_valid_params(char **argv, int argc);
 int				ft_isnotdigit(char *str, int has_digit, int in_number);
 void			check_null(void *arg);
+int				is_repeat_num(int *arr, int length, long num);
 void			swap(int *a, int *b);
-void			sort_arr(int *arr, int length);
+int				is_sorted(int *arr, size_t size);
 char			**create_splited_numbers(char **str_arr);
-size_t			ft_index_of(int *arr, int num, size_t len);
-int				is_sorted(int *arr, size_t len);
 void			free_ptr(void **p);
 void			check_nums_arr(int *num_arr, char **char_nums_arr, size_t len);
 void			check_idx_arr(size_t *i_array, int *n_array, char **char_nums);
