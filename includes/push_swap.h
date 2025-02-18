@@ -6,7 +6,7 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 17:11:04 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/17 09:46:04 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/18 10:39:56 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void			init_stack(t_stack **stack, size_t *indexes_array, char **argv);
 void			sort_stack(t_stack **a_stack, t_stack **b_stack);
 size_t			get_available_number_range(size_t lstsize);
 size_t			*take_sorted_indexes(int *arr, size_t length);
-int				is_str_repeat_in_array(char **str_nums_array);
 long			ft_atol(const char *nptr);
 size_t			ft_atol_strlen(const char *s);
 #endif

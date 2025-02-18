@@ -6,7 +6,7 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 17:25:52 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/17 09:02:14 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/20 10:17:01 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 	t_stack	*b_stack_begin;	
 	size_t	*indexes_array;
 
-	if (argc >= 2 && argv && argv[1][0] != '\0')
+	if (argc >= 2 && argv)
 	{
 		if (argc == 2)
 			if (ft_isnotdigit(argv[1], 0, 0) && ft_isprint(argv[1][0]))

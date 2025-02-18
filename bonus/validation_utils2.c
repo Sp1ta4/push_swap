@@ -6,38 +6,17 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 14:47:01 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/16 17:42:07 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/18 10:42:04 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int	is_str_repeat_in_array(char **str_nums_array)
+int	is_repeat_num(int *arr, int length, long num)
 {
-	int		i;
-	int		j;
-	size_t	istr_len;
-	size_t	jstr_len;
-
-	i = 0;
-	while (str_nums_array[i])
-	{
-		istr_len = ft_strlen(str_nums_array[i]);
-		j = i;
-		while (str_nums_array[++j])
-		{
-			jstr_len = ft_strlen(str_nums_array[j]);
-			if (jstr_len > istr_len)
-			{
-				if (!ft_strncmp(str_nums_array[i], str_nums_array[j], jstr_len))
-					return (1);
-			}
-			else
-				if (!ft_strncmp(str_nums_array[i], str_nums_array[j], istr_len))
-					return (1);
-		}
-		i++;
-	}
+	while (length--)
+		if (arr[length] == num)
+			return (1);
 	return (0);
 }
 

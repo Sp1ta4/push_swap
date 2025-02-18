@@ -6,7 +6,7 @@
 /*   By: ggevorgi <sp1tak.gg@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 09:01:11 by ggevorgi          #+#    #+#             */
-/*   Updated: 2025/02/17 09:01:41 by ggevorgi         ###   ########.fr       */
+/*   Updated: 2025/02/18 10:42:22 by ggevorgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include <stdlib.h>
 # include <fcntl.h>
 
+int				is_repeat_num(int *arr, int length, long num);
 void			success(void);
 void			fail(void);
 char			*get_next_line(int fd);
@@ -59,7 +60,6 @@ void			swap_begin_second(t_stack **stack, char *msg);
 void			init_stack(t_stack **stack, size_t *indexes_array, char **argv);
 size_t			get_available_number_range(size_t lstsize);
 size_t			*take_sorted_indexes(int *arr, size_t length);
-int				is_str_repeat_in_array(char **str_nums_array);
 long			ft_atol(const char *nptr);
 size_t			ft_atol_strlen(const char *s);
 
